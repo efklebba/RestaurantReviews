@@ -4,6 +4,19 @@ let restaurants,
 var newMap
 var markers = []
 
+// From: https://developers.google.com/web/fundamentals/primers/service-workers/
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/js/sw.js', {scope: '/'}).then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -152,6 +165,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+    image.alt = `${restaurant.cuisine_type}: ${restaurant.name}`
   li.append(image);
 
   const name = document.createElement('h1');
