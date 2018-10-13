@@ -40,12 +40,12 @@ The project was developed using HTML5, CSS3, JavaScript
 
 ## Authors
 
-[Eric Klebba](klebba1@slb.com)
-[David Harris](forbiddenvoid@gmail.com)
+1. [Eric Klebba](klebba1@slb.com)
+2. [David Harris](forbiddenvoid@gmail.com)
 
 ## References
 
-[CSS-Tricks](https://css-tricks.com/)
-[w3schools](https://www.w3schools.com)
-[Google service workers](https://developers.google.com/web/fundamentals/primers/service-workers/)
+1. [CSS-Tricks](https://css-tricks.com/)
+2. [w3schools](https://www.w3schools.com)
+3. [Google service workers](https://developers.google.com/web/fundamentals/primers/service-workers/)
 
