@@ -1,32 +1,51 @@
-# Mobile Web Specialist Certification Course
----
-#### _Three Stage Course Material Project - Restaurant Reviews_
+# Restaurant Reviews Project
 
-## Project Overview: Stage 1
+The restaurant reviews project is a web page served up by a local server. It lists a number of restaurants and their reviews. It also shows each restaurant's location on a map.
 
-For the **Restaurant Reviews** projects, you will incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, you will take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. You will also add a service worker to begin the process of creating a seamless offline experience for your users.
+## Installation
 
-### Specification
+### Requirements
 
-You have been provided the code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. Your job is to update the code to resolve these issues while still maintaining the included functionality. 
+* Any OS that has a browser that supports CSS3, HTML5 and JavaScript (ie Google Chrome, Mozilla Firefox, Silk, etc)
+* CSS3
+* HTLM5
+* python
+* MapBox access token
 
-### What do I do from here?
+### Steps
 
-1. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer. 
+The project can be downloaded from github [here](https://github.com/efklebba/RestaurantReviews).
 
-In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
+You will need a MapBox access token to display the maps correctly. Go to (https://www.mapbox.com) to create your own token. Once you have created a token, open the file js/envhelper.js and replace the string "<Your MAPBOX Token here>" with the access token created on mapbox.com.
+ 
+To start the local server, open a command prompt window and change the directory to the directory containing the index.html file. For python 2.x, type in "python -m SimpleHTTPServer 8100". For python 3.x, type in "python -m http.server 8100". The 8100 specifies what port number to use. If you change it to something else, you must also change the file js/dbhelper.js and set the port variable to the new port number.
 
-2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
-3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
-4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
+Once the local server is running, you can open any browser and type in "localhost:8100" to see the main page.
 
-## Leaflet.js and Mapbox:
+## Accessibility
 
-This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information. 
+This site was designed to be accessible. All of the images have an alt tag defined stating the cuisine type and the name of the restaurant. The View Details links also have a title tag implemented which a screen reader can access so that the user knows what restaurant details they are about to view. The combo boxes and the View Details links also include focus and hover attributes as visual clues.
 
-### Note about ES6
+Aria roles were not defined for any elements since the native semantics were sufficient.
 
-Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
+The accessibility was tested on Linux Mint with the screen reader on. All elements provided enough information to navigate through the pages.
 
+## Service Worker
 
+A service worker was implemented for this project. It only appears to work in Google Chrome. However, while using Google Chrome, the service worker will cache any page that the user visits. This comes in handy when the internet connection is slow or is lost entirely. Even the maps for each page will be cached locally if the user visits a page containing a map. For any page that was not visited, the map will not display.
+
+## Development
+
+The project was developed using HTML5, CSS3, JavaScript
+
+## Authors
+
+[Eric Klebba](klebba1@slb.com)
+[David Harris](forbiddenvoid@gmail.com)
+
+## References
+
+[CSS-Tricks](https://css-tricks.com/)
+[w3schools](https://www.w3schools.com)
+[Google service workers](https://developers.google.com/web/fundamentals/primers/service-workers/)
 
