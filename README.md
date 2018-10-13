@@ -16,7 +16,7 @@ The restaurant reviews project is a web page served up by a local server. It lis
 
 The project can be downloaded from github [here](https://github.com/efklebba/RestaurantReviews).
 
-You will need a MapBox access token to display the maps correctly. Go to (https://www.mapbox.com) to create your own token. Once you have created a token, open the file js/envhelper.js and replace the string '<Your MAPBOX Token here>' with the access token created on mapbox.com.
+You will need a MapBox access token to display the maps correctly. Go to (https://www.mapbox.com) to create your own token. Once you have created a token, open the file js/envhelper.js and replace the string "\<Your MAPBOX Token here\>" with the access token created on mapbox.com.
  
 To start the local server, open a command prompt window and change the directory to the directory containing the index.html file. For python 2.x, type in "python -m SimpleHTTPServer 8100". For python 3.x, type in "python -m http.server 8100". The 8100 specifies what port number to use. If you change it to something else, you must also change the file js/dbhelper.js and set the port variable to the new port number.
 
